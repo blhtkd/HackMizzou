@@ -1,0 +1,175 @@
+DROP SCHEMA IF EXISTS Guidance CASCADE;
+CREATE SCHEMA Guidance;
+
+SET search_path = Guidance, public;
+
+DROP TABLE IF EXISTS CS_Courses;
+CREATE TABLE CS_Courses (
+	course_name_num char(7) NOT NULL default '',
+	title varchar(100) NOT NULL default '',
+	prereq varchar(10) NOT NULL default '',
+	credits varchar(10) NOT NULL default '0',
+	taken NUMERIC(1) NOT NULL default '0',
+	PRIMARY KEY (course_name_num)
+);
+
+--INSERT INTO CS_Courses values ('CS 1000', 'Intro to Comp Sci', '', '1');
+
+DROP TABLE IF EXISTS Math_Courses;
+CREATE TABLE Math_Courses (
+	course_name_num varchar(20) NOT NULL default '',
+	title varchar(100) NOT NULL default '',
+	prereq varchar(20) NOT NULL default '',
+	credits varchar(10) NOT NULL default '0',
+	taken NUMERIC(1) NOT NULL default '0',
+	PRIMARY KEY (course_name_num)
+);
+DROP TABLE IF EXISTS Stat_Courses;
+CREATE TABLE Stat_Courses (
+	course_name_num varchar(20) NOT NULL default '',
+	title varchar(100) NOT NULL default '',
+	prereq varchar(20) NOT NULL default '',
+	credits varchar(10) NOT NULL default '0',
+	taken NUMERIC(1) NOT NULL default '0',
+	PRIMARY KEY (course_name_num)
+);
+
+--INSERT INTO Math_Courses values ('MATH 1500', 'Calc 1', '', '5');
+
+DROP TABLE IF EXISTS Science_Courses;
+CREATE TABLE Science_Courses (
+	course_name_num varchar(20) NOT NULL default '',
+	title varchar(100) NOT NULL default '',
+	prereq varchar(100) NOT NULL default '',
+	credits varchar(10) NOT NULL default '0',
+	taken NUMERIC(1) NOT NULL default '0',
+	PRIMARY KEY (course_name_num)
+);
+
+--INSERT INTO Science_Courses values ('PHYSICS 2750', 'University Physics', '', '5');
+
+INSERT INTO CS_Courses VALUES ('CS 1000','  Introduction to Computer Science', '',' 1', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 1050','  Algorithm Design and Programming I', ' (Math 1100)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 2050','  Algorithm Design and Programming II', ' (CS 1050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 2270','  Introduction to Digital Logic', ' (CS 1050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 3050','  Advanced Algorithm Design', ' (CS 2050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 3280','  Computer Organization & Assembly Language', ' (CS 2270)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 3330','  Object Oriented Programming', ' (CS 2050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 3380','  Database Applications and Information Systems', ' (CS 2050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4050','  Design and Analysis of Algorithms I', ' (CS 3050 and Math 2320)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4320','  Software Engineering I', ' (CS 3380)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4520','  Operating Systems I', ' (CS 3050 and Math 1700)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4850','  Computer Networks I', ' (CS 2270 & Math 2320)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4970','  Senior Capstone Design â€“ writing intensive', ' (CS 4320 and English 1000)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4980','  Senior Capstone Design II', ' (CS 4970)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 2830','  Introduction to the Internet: WWW & Multimedia Systems', ' (CS 2050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 3530','  UNIX Operating System', ' (Advanced C programming language)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 3940','  Internship in Computer Science', ' (CS 2050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4001','  Topics in Computer Science', ' (prerequisites vary)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4060','  String Algorithms', ' (CS 4050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4085','  Problems in CS', ' (instructor consent)',' varies', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4270','  Computer Architecture I', ' (CS 2270)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4380','  Database Management Systems I', ' (CS 3380)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4410','  Theory of Computation I', ' (Math 2320)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4430','  Compilers I', ' (CS 2050 & Math 2320)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4450','  Principles of Programming Languages', ' (CS 2050)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4440','  Malware Analysis and Defense', ' (CS 3280)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4610','  Computer Graphics I', ' (CS 3050 & Math 1500 or Math 1300 & 1400)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4620','  Physically Based Modeling & Animation', ' (CS 4610)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4650','  Digital Image Processing', ' (CS 2050 & Stat 4710)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4730','  Building Intelligent Robots', ' (junior standing and programming experience)',' 4', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4740','  Interdisc Intro to Natural Language Processing', ' (senior standing)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4750','  Artificial Intelligence I', ' (CS 3050 and at least junior standing)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4770','  Intro to Computational Intelligence', '',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4830','  Science and Engineering of the World Wide Web', ' (CS 2830)',' 3', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4990','  Undergraduate Research in CS', '',' ', 0);
+
+INSERT INTO CS_Courses VALUES ('CS 4995','  Undergraduate Research in CS Honors ', '',' ', 0);
+
+INSERT INTO Math_Courses VALUES ('MATH 1500','  Analytic Geometry and Calculus I', ' (Math 1160)',' 5', 0);
+
+INSERT INTO Math_Courses VALUES ('MATH 1700','  Calculus II', ' (Math 1500)',' 5', 0);
+
+INSERT INTO Math_Courses VALUES ('MATH 2300','  Calculus III', ' (Math 1700)',' 3', 0);
+
+INSERT INTO Math_Courses VALUES ('MATH 2320','  Discrete Math', ' (Math 1700)',' 3', 0);
+
+INSERT INTO Stat_Courses VALUES ('STAT 4710/MATH 4315','  Introduction to Mathematical Statistics', ' (Math 2300)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Physics 2750','  University Physics I', ' (Math 1500 & co-requisite Math 1700)',' 5', 0);
+
+INSERT INTO Science_Courses VALUES ('Physics 2760','  University Physics II', ' (Math 1700 and Physics 2750 & co-requisite Math 2300)',' 5', 0);
+
+INSERT INTO Science_Courses VALUES ('Physics 1210','  College Physics I', ' (Math 1100)',' 4', 0);
+
+INSERT INTO Science_Courses VALUES ('Physics 1220','  College Physics II', ' (Physics 1210)4',' ', 0);
+
+INSERT INTO Science_Courses VALUES ('Chemistry 1320','  College Chem I', ' (Math 1100)',' 4', 0);
+
+INSERT INTO Science_Courses VALUES ('Chemistry 1330','  College Chem II', ' (Chem 1320)',' 4', 0);
+
+INSERT INTO Science_Courses VALUES ('Biology 1200','  General Botany', '',' 5', 0);
+INSERT INTO Science_Courses VALUES ('Anthropology 2050','  Intro to Biological Anthropology with Lab', ' (Math 1100/sophomore)',' 5', 0);
+INSERT INTO Science_Courses VALUES ('Anthropology 2051','  Intro to Biological Anthropology with Lab', ' (Math 1100/sophomore)',' 5', 0);
+INSERT INTO Science_Courses VALUES ('Anthropology 2053','  Intro to Biological Anthropology with Lab', ' (Math 1100/sophomore)',' 5', 0);
+INSERT INTO Science_Courses VALUES ('Biology 2100','  Infectious Diseases', ' (Bio Sc 1010)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Biology 2600','  Ornithology', ' (5 hours biology or instructorâ€™s consent)',' 4', 0);
+
+INSERT INTO Science_Courses VALUES ('Biology 3050','  Genetics & Society', ' (science course)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Biochemistry 2110','  The Living World: Molecular Scale', '',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Biochemistry 2112','  Biotechnology in Society', '',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Geology 1100','  Principles of Geology or Environmental Geology', '',' 4', 0);
+INSERT INTO Science_Courses VALUES ('Geology 1201','  Principles of Geology or Environmental Geology', '',' 4', 0);
+INSERT INTO Science_Courses VALUES ('Geology 2150','  The Age of the Dinosaurs', ' (1000 level science course)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Geology 2200','  Oceanography', ' (Math 1100)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Geology 2300','  Earth Systems & Global Change', ' (1000 level science course)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Geology 2350','  Historical Geology', ' (Geol 1100/1200 and English 1000)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Geology 2400','  Surficial Earth Processes and Products', ' (Geol 1100/1200 and Math 1100)',' 4', 0);
+
+INSERT INTO Science_Courses VALUES ('Geology 2450','  Global Water Cycle', ' (Geol 1100/1200 and Math 1100)',' 3', 0);
+
+INSERT INTO Science_Courses VALUES ('Astronomy 1010','  Intro to Astronomy I', ' (Math 1100)',' 4', 0);
+
+INSERT INTO Science_Courses VALUES ('Astronomy 1020','  Intro to Laboratory Astronomy', ' (Astron 1010)',' 2', 0);
